@@ -22,11 +22,9 @@ class Gif extends Component {
 
     mostrarGif = (data) => {
         console.log(data)
-        this.setState(
-            {
-                gif: data.data[0].embed_url
-            }
-        )
+        this.setState({
+            gif: data.data.embed_url
+        })
     }
 
     componentDidUpdate() {
@@ -37,15 +35,14 @@ class Gif extends Component {
         let contenido;
 
         if (this.state.gif == "") {
-            contenido = <p>Paraaaa manija, ya va a cargar </p>
+            contenido = < p > Paraaaa manija, ya va a cargar < /p>
         } else {
-            contenido = <img src={this.state.gif}></img>
+            contenido = < img src = { this.state.gif } > < /img>
         }
-        return (
-            <div>
-                {contenido}
-                <button>Hace Click para ver mas gatitos</button>
-            </div>
+        return ( <
+            div > { contenido } <
+            button > Hace Click para ver mas gatitos < /button> <
+            /div>
         )
     }
 }
