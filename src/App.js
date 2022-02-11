@@ -4,7 +4,7 @@ import './App.css';
 
 function Saludo() {
     return ( <div className = "Saludo" >
-Mira pipi, toda una tarde para esta mierda, y encima no me salio
+Mira pipina, toda una tarde para esta mierda, y encima no me salio
         </div>
     );
 }
