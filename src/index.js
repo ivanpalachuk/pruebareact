@@ -4,13 +4,12 @@ import './index.css';
 import Saludo from './App';
 import reportWebVitals from './reportWebVitals';
 import Gif from "./Gif"
-import {BrowserRouter, Link, Route, Switch} from  "react-router-dom"
 
 ReactDOM.render( 
-    <BrowserRouter >
+    <>
     <Saludo />
     <Gif />
-    </BrowserRouter>,
+    </>,
     document.getElementById('root')
 );
 

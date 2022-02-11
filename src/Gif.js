@@ -16,35 +16,44 @@ class Gif extends Component {
     }
 
     componentDidMount() {
-        this.apiCall("https://api.giphy.com/v1/gifs/search?api_key=6dFuI7hloGKO1I5B1WMGu5sQgBWfEyfO&q=Cats&rating=g&lang=en", this.mostrarGif)
-
+        
+        this.apiCall("https://api.giphy.com/v1/gifs/random?api_key=6dFuI7hloGKO1I5B1WMGu5sQgBWfEyfO&tag=cats&rating=g://api.giphy.com/v1/gifs/search?api_key=6dFuI7hloGKO1I5B1WMGu5sQgBWfEyfO&q=cats&limit=25&offset=0&rating=g&lang=en" , this.mostrarGif)
+        
     }
 
     mostrarGif = (data) => {
-        console.log(data)
+        
         this.setState({
-            gif: data.data.embed_url
+            gif: data.data.images.downsized.url
         })
     }
 
     componentDidUpdate() {
+        //this.nuevoGif
 
     }
 
+    nuevoGif(){
+        this.apiCall("https://api.giphy.com/v1/gifs/random?api_key=6dFuI7hloGKO1I5B1WMGu5sQgBWfEyfO&tag=cats&rating=g://api.giphy.com/v1/gifs/search?api_key=6dFuI7hloGKO1I5B1WMGu5sQgBWfEyfO&q=cats&limit=25&offset=0&rating=g&lang=en", this.mostrarGif)
+
+    }
+    
     render() {
         let contenido;
 
-        if (this.state.gif == "") {
-            contenido = < p > Paraaaa manija, ya va a cargar < /p>
+        if (this.state.gif === "") {
+            contenido = <p> Paraaaa manija, ya va a cargar </p>
         } else {
-            contenido = < img src = { this.state.gif } > < /img>
+            contenido = <img src={this.state.gif} alt = "Giffatuno" ></img>
         }
-        return ( <
-            div > { contenido } <
-            button > Hace Click para ver mas gatitos < /button> <
-            /div>
-        )
+
+        return (<div> {contenido} <button /*onClick={</div>() => this.nuevoGif()}*/> Hace Click para ver mas gatitos </button>
+
+        </div>)
     }
 }
+
+
+
 
 export default Gif;
