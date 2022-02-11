@@ -18,7 +18,7 @@ class Gif extends Component {
     componentDidMount() {
         
         this.apiCall("https://api.giphy.com/v1/gifs/random?api_key=6dFuI7hloGKO1I5B1WMGu5sQgBWfEyfO&tag=cats&rating=g://api.giphy.com/v1/gifs/search?api_key=6dFuI7hloGKO1I5B1WMGu5sQgBWfEyfO&q=cats&limit=25&offset=0&rating=g&lang=en" , this.mostrarGif)
-        
+        alert("componente montado")
     }
 
     mostrarGif = (data) => {
@@ -29,7 +29,7 @@ class Gif extends Component {
     }
 
     componentDidUpdate() {
-        //this.nuevoGif
+        //this.nuevoGif()
 
     }
 
